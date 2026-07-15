@@ -60,6 +60,18 @@ class SettingsPreferenceFragment : PreferenceFragmentCompat() {
             true
         }
 
+        val monetColor = findPreference<SwitchPreference>(Key.MONET_COLOR)!!
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+            monetColor.isVisible = false
+        } else {
+            appTheme.isEnabled = !DataStore.monetColor
+            monetColor.setOnPreferenceChangeListener { _, newValue ->
+                appTheme.isEnabled = !(newValue as Boolean)
+                ActivityCompat.recreate(requireActivity())
+                true
+            }
+        }
+
         val nightTheme = findPreference<SimpleMenuPreference>(Key.NIGHT_THEME)!!
         nightTheme.setOnPreferenceChangeListener { _, newTheme ->
             Theme.currentNightMode = (newTheme as String).toInt()

@@ -12,6 +12,12 @@
             android:title="@string/theme"
             app:icon="@drawable/ic_baseline_color_lens_24"
             app:key="appTheme" />
+        <SwitchPreference
+            app:defaultValue="false"
+            app:icon="@drawable/ic_baseline_color_lens_24"
+            app:key="monetColor"
+            app:title="@string/monet_color"
+            app:summary="@string/monet_color_summary" />
         <moe.matsuri.nb4a.ui.SimpleMenuPreference
             app:defaultValue="0"
             app:entries="@array/night_mode"

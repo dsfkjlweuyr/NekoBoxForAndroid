@@ -33,6 +33,10 @@ abstract class ThemedActivity : AppCompatActivity {
         }
         Theme.applyNightTheme()
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && DataStore.monetColor) {
+            com.google.android.material.color.DynamicColors.applyToActivityIfAvailable(this)
+        }
+
         super.onCreate(savedInstanceState)
 
         uiMode = resources.configuration.uiMode

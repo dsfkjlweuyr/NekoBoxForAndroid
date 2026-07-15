@@ -209,6 +209,8 @@
     <string name="extra_headers">額外標頭</string>
     <string name="config_type">設定類型</string>
     <string name="theme">主題</string>
+    <string name="monet_color">使用系統主題色</string>
+    <string name="monet_color_summary">使用系統動態色彩 (Android 12+)</string>
     <string name="edit_config">編輯設定</string>
     <string name="ipv6">IPv6 路由</string>
     <string name="prefer">優先</string>
