@@ -34,7 +34,10 @@ abstract class ThemedActivity : AppCompatActivity {
         Theme.applyNightTheme()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && DataStore.monetColor) {
-            com.google.android.material.color.DynamicColors.applyToActivityIfAvailable(this)
+            val options = com.google.android.material.color.DynamicColorsOptions.Builder()
+                .setPrecondition { _, _ -> true }
+                .build()
+            com.google.android.material.color.DynamicColors.applyToActivityIfAvailable(this, options)
         }
 
         super.onCreate(savedInstanceState)
