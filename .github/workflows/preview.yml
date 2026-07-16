@@ -1,5 +1,8 @@
 name: Preview Build
 on:
+  push:
+    paths:
+      - 'nb4a.properties'
   workflow_dispatch:
     inputs:
 jobs:
